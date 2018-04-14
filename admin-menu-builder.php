@@ -18,5 +18,5 @@ Text Domain:  admin-menu-builder
 Domain Path:  /languages
 */
 
-// Include create-admin-menu.php
-require_once 'create-admin-menu.php';
+// Include custom-functions.php
+require_once 'custom-functions.php';

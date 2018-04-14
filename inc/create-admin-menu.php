@@ -2,20 +2,22 @@
 /**
  * Custom functions for creating admin menu settings for the plugin.
  *
- * @package Orion SMS OTP Verification
+ * @package Admin Menu Builder
  */
 add_action( 'admin_menu', 'ihs_create_post_tax_menu' );
+
 if ( ! function_exists( 'ihs_create_post_tax_menu' ) ) {
 	/**
-	 * Creates Menu for Orion Plugin in the dashboard.
+	 * Creates Menu for Plugin in the dashboard.
 	 */
 	function ihs_create_post_tax_menu() {
 		// Create new top-level menu.
-		add_menu_page( 'Create Post Tax Plugin Settings', 'Create Post Tax', 'administrator', __FILE__, 'ihs_post_tax_form_func', 'dashicons-email' );
+		add_menu_page( 'Create Post Tax Plugin Settings', 'Create Post Tax', 'administrator', __FILE__, 'ihs_post_tax_form_func', 'dashicons-admin-plugins' );
 		// Call register settings function.
 		add_action( 'admin_init', 'register_ihs_post_tax_settings' );
 	}
 }
+
 if ( ! function_exists( 'register_ihs_post_tax_settings' ) ) {
 	/**
 	 * Register our settings.
@@ -26,9 +28,10 @@ if ( ! function_exists( 'register_ihs_post_tax_settings' ) ) {
 		register_setting( 'ihs_post_tax_settings_group', 'ihs_is_hierarchical' );
 	}
 }
+
 if ( ! function_exists( 'ihs_get_checked_val' ) ) {
 	/**
-	 * Find the value of checked mobile input value and return an array.
+	 * Find the value of checked input value and return an array.
 	 *
 	 * @return {array} $checked_array Array containing values yes or no.
 	 */
@@ -46,9 +49,10 @@ if ( ! function_exists( 'ihs_get_checked_val' ) ) {
 		return $checked_array;
 	}
 }
+
 if ( ! function_exists( 'ihs_post_tax_form_func' ) ) {
 	/**
-	 * Settings Page for Orion Plugin.
+	 * Settings Page for Plugin.
 	 */
 	function ihs_post_tax_form_func() {
 		?>
